@@ -390,7 +390,12 @@ export default function Home() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-              {/* NUEVA SECCIÓN EXCLUSIVA DE DESCARGAS */}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* NUEVA SECCIÓN EXCLUSIVA DE DESCARGAS */}
       <section className="relative w-full overflow-hidden border-t border-b border-zinc-200 dark:border-zinc-900 py-20 px-4 sm:px-6 lg:px-8">
         {/* Background Image integrating banner-demo */}
         <div className="absolute inset-0 z-0">
