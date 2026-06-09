@@ -336,7 +336,7 @@ export default function Home() {
       </AnimatePresence>
 
       {/* HERO SECTION (Limpieza y estética Nintendo corporativa) */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
           {/* Hero Left Content */}
           <motion.div
@@ -345,11 +345,18 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6 flex flex-col items-start text-left"
           >
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading leading-tight tracking-tight mb-8 text-zinc-900 dark:text-white">
-              Descubre el videojuego gratuito hecho por dos fans sevillanos amantes de Pokémon que está revolucionando a toda Andalucía.
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-400 mb-6 border border-amber-200/20 shadow-sm">
+              🎮 Fangame Pokémon Gratuito
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-heading leading-tight tracking-tight mb-4 uppercase bg-gradient-to-r from-red-600 via-amber-500 to-red-600 bg-clip-text text-transparent">
+              Hispalis: Proyecto NODO
             </h1>
 
-            <p className="text-base sm:text-lg text-zinc-650 dark:text-zinc-400 leading-relaxed max-w-2xl">
+            <h2 className="text-lg sm:text-xl font-bold text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6">
+              Descubre el videojuego gratuito hecho por dos fans sevillanos amantes de Pokémon que está revolucionando a toda Andalucía.
+            </h2>
+
+            <p className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-2xl">
               Sumérgete en la historia de Hispalis, una Sevilla post-apocalíptica desolada tras una gran pandemia y donde ahora reinan los Pokémon.
             </p>
           </motion.div>
@@ -372,7 +379,9 @@ export default function Home() {
                   alt="Hispalis: Proyecto NODO - Sevilla Pokémon"
                   fill
                   priority
+                  quality={100}
                   className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>
