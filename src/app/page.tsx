@@ -139,11 +139,18 @@ export default function Home() {
 
       {/* HEADER / NAVBAR */}
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b ${
+        className={`sticky top-0 z-50 w-full transition-all duration-300 backdrop-blur-md border-b ${
           scrolled
             ? "border-zinc-200 dark:border-zinc-800 shadow-md"
             : "border-zinc-200/50 dark:border-zinc-800/50"
         }`}
+        style={{
+          backgroundImage: isDark
+            ? "linear-gradient(to bottom, rgba(24, 24, 27, 0.8), rgba(24, 24, 27, 0.8)), url('/fondo-header.png')"
+            : "linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/fondo-header.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex flex-row items-center justify-between whitespace-nowrap gap-4">
           <Link href="/" className="flex items-center gap-3 shrink-0">
