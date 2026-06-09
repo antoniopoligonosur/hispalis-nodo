@@ -721,7 +721,7 @@ export default function Home() {
           : "bg-zinc-900 border-zinc-950 text-zinc-300"
       }`}>
         {/* Top styling band inspired by Nintendo design */}
-        <div className="h-1 bg-red-600 w-full" />
+        <div className="h-[3px] bg-gradient-to-r from-amber-500 via-orange-500 to-red-600 w-full opacity-90" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-10">
@@ -747,8 +747,8 @@ export default function Home() {
                 </div>
               </Link>
               
-              <p className="text-xs text-zinc-450 dark:text-zinc-450 leading-relaxed mb-4 max-w-sm">
-                Un videojuego RPG de Pokémon gratuito ambientado en una Sevilla post-apocalíptica. Proyecto sin fines lucrativos desarrollado bajo la política de uso justo para fans de Pokémon.
+              <p className="text-xs text-zinc-400 dark:text-zinc-400 leading-relaxed mb-4 max-w-sm">
+                ¡Descubre Hispalis Proyecto NODO, el fangame Pokémon inspirado en Sevilla! Explora una región única desolada tras una gran pandemia, colecciona sus cartas oficiales, descubre su Pokédex autóctona y únete a una comunidad andaluza que no para de crecer.
               </p>
             </div>
 
@@ -758,9 +758,15 @@ export default function Home() {
               <p className="text-xs text-zinc-400 leading-relaxed mb-4">
                 Creado y desarrollado con pasión por los fans sevillanos:
               </p>
-              <div className="flex flex-col gap-1.5 text-xs text-zinc-300 mb-4">
-                <span className="font-bold">Pablo Shurmano</span>
-                <span className="font-bold">Onofre Wayne</span>
+              <div className="flex flex-col gap-2 text-xs text-zinc-300 mb-4">
+                <span className="font-bold flex items-center gap-2">
+                  <User size={13} className="text-amber-500 shrink-0" />
+                  <span>Pablo Shurmano</span>
+                </span>
+                <span className="font-bold flex items-center gap-2">
+                  <User size={13} className="text-red-500 shrink-0" />
+                  <span>Onofre Wayne</span>
+                </span>
               </div>
               
               <a
@@ -785,7 +791,8 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-zinc-300 hover:text-red-500 transition-colors"
                   >
-                    TikTok Oficial
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 animate-pulse" />
+                    <span>TikTok Oficial</span>
                   </a>
                 </li>
                 <li>
@@ -795,7 +802,8 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-zinc-300 hover:text-amber-500 transition-colors"
                   >
-                    Instagram Oficial
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 animate-pulse" />
+                    <span>Instagram Oficial</span>
                   </a>
                 </li>
                 <li>
@@ -805,7 +813,8 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-zinc-300 hover:text-purple-400 transition-colors"
                   >
-                    Twitter / X Oficial
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0 animate-pulse" />
+                    <span>Twitter / X Oficial</span>
                   </a>
                 </li>
               </ul>
