@@ -384,12 +384,7 @@ export default function Home() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* NUEVA SECCIÓN EXCLUSIVA DE DESCARGAS */}
+              {/* NUEVA SECCIÓN EXCLUSIVA DE DESCARGAS */}
       <section className="relative w-full overflow-hidden border-t border-b border-zinc-200 dark:border-zinc-900 py-20 px-4 sm:px-6 lg:px-8">
         {/* Background Image integrating banner-demo */}
         <div className="absolute inset-0 z-0">
@@ -397,7 +392,8 @@ export default function Home() {
             src="/banner-demo.png"
             alt="Banner Demo Hispalis"
             fill
-            className="object-cover object-center filter brightness-[0.4] dark:brightness-[0.3]"
+            className="filter brightness-[0.4] dark:brightness-[0.3]"
+            style={{ objectFit: "cover", objectPosition: "center top" }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-red-950/20 via-zinc-950/80 to-zinc-950/90 z-1" />
         </div>
@@ -443,7 +439,7 @@ export default function Home() {
       {/* SECCIÓN ACCIONES RÁPIDAS (Integración de Imágenes) */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-xs font-black uppercase tracking-widest text-red-655 dark:text-amber-500 mb-3">Accesos Directos</h2>
+          <h2 className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-500 mb-3">Accesos Directos</h2>
           <p className="text-2xl sm:text-4xl font-heading font-black tracking-tight">Enlaces Oficiales del Proyecto</p>
         </div>
 
@@ -478,8 +474,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="p-6 pt-0 flex items-center gap-2 text-xs font-black uppercase text-red-650 dark:text-red-450 text-left">
-              <span>Explorar Cartas</span>
+            <div className="p-6 pt-0 flex items-center gap-2 text-xs font-black uppercase text-red-600 dark:text-red-500 text-left">
+              <span>EXPLORAR CARTAS</span>
               <ExternalLink size={13} className="group-hover:translate-x-0.5 transition-transform" />
             </div>
           </motion.a>
@@ -496,12 +492,12 @@ export default function Home() {
             }`}
           >
             <div>
-              <div className="relative aspect-video w-full overflow-hidden bg-zinc-150 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+              <div className="relative aspect-video w-full overflow-hidden bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
                 <Image
-                  src="/hispalis-proyecto-nodo-vertical.png"
+                  src="/Banners-web-hispalis-descarga-demo-aqui-1-scaled.jpg"
                   alt="Venta Online Cartas"
                   fill
-                  className="object-contain p-2 bg-zinc-950 group-hover:scale-[1.03] transition-transform duration-500"
+                  className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
                 />
               </div>
               <div className="p-6 text-left">
@@ -548,8 +544,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="p-6 pt-0 flex items-center gap-2 text-xs font-black uppercase text-purple-650 dark:text-purple-400 text-left">
-              <span>Abrir Pokédex</span>
+            <div className="p-6 pt-0 flex items-center gap-2 text-xs font-black uppercase text-purple-600 dark:text-purple-500 text-left">
+              <span>ABRIR POKÉDEX</span>
               <ExternalLink size={13} className="group-hover:translate-x-0.5 transition-transform" />
             </div>
           </motion.a>
