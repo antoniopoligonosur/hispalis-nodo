@@ -60,7 +60,7 @@ export default function AvisoLegal() {
             <h2 className="font-heading font-bold text-zinc-900 dark:text-white text-lg mb-3">4. Protección de Datos</h2>
             <p>
               Todo lo relativo al tratamiento de datos personales de los usuarios está recogido en nuestra detallada{" "}
-              <Link href="/politica-de-privacidad" className="text-red-650 dark:text-amber-500 hover:underline">
+              <Link href="/politica-privacidad" className="text-red-650 dark:text-amber-500 hover:underline">
                 Política de Privacidad
               </Link>.
             </p>
