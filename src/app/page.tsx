@@ -84,21 +84,24 @@ const merchanItems = [
     name: "Camiseta Edición Primigenia",
     description: "Diseño exclusivo impreso en serigrafía de alta calidad. 5 modelos disponibles 100% ilustrados por los creadores.",
     price: "19,90 €",
-    badge: "Más Vendido"
+    badge: "Más Vendido",
+    image: "/camisa-curro-lover.jpeg"
   },
   {
     id: 2,
     name: "Póster Sevilla Post-Apocalíptica",
     description: "Impresión de alta resolución en papel satinado. 3 diseños artísticos increíbles que retratan la desolación de Hispalis.",
     price: "7,50 €",
-    badge: "Arte Coleccionista"
+    badge: "Arte Coleccionista",
+    image: "/poster-curro-charca-819x1024.png"
   },
   {
     id: 3,
-    name: "Pack de Chapas y Pegatinas NODO",
-    description: "Chapas metálicas y pegatinas de vinilo resistentes al agua con los Pokémon iniciales de Hispalis y el logo oficial del proyecto.",
+    name: "Sobre de cartas: Colección Primigenia",
+    description: "Consigue el pack oficial con las cartas físicas oficiales ilustradas de la región de Hispalis. Edición limitada de lanzamiento.",
     price: "4,90 €",
-    badge: "Esenciales"
+    badge: "Edición Especial",
+    image: "/mockup-4-cartas-coleccion-primigenia-con-fondo-y-logo-819x1024.png"
   }
 ];
 
@@ -106,6 +109,7 @@ export default function Home() {
   const [isDark, setIsDark] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeMerchId, setActiveMerchId] = useState(1);
 
   // Sync state with HTML dark class
   useEffect(() => {
@@ -125,6 +129,8 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const activeMerchItem = merchanItems.find((item) => item.id === activeMerchId) || merchanItems[0];
 
   return (
     <div className={`relative min-h-screen transition-colors duration-300 ${isDark ? "bg-[#050506] text-zinc-100" : "bg-[#f8fafc] text-zinc-900"}`}>
@@ -622,7 +628,7 @@ export default function Home() {
           
           {/* Merchan Left Column */}
           <div className="lg:col-span-7 flex flex-col text-left">
-            <h2 className="text-xs font-black uppercase tracking-widest text-red-655 dark:text-amber-500 mb-3">Exclusivo</h2>
+            <h2 className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-500 mb-3">Exclusivo</h2>
             <h3 className="text-3xl sm:text-5xl font-heading font-black tracking-tight mb-6 text-zinc-900 dark:text-white">
               Consigue nuestro merchan exclusivo <span className="text-red-600 dark:text-red-500">antes de que se agote</span>
             </h3>
@@ -635,22 +641,37 @@ export default function Home() {
               {merchanItems.map((item) => (
                 <div
                   key={item.id}
-                  className={`flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl border transition-all duration-300 ${
-                    isDark 
-                      ? "bg-[#111114] border-zinc-900 hover:border-zinc-800" 
-                      : "bg-white border-zinc-200 hover:border-zinc-300"
+                  onMouseEnter={() => setActiveMerchId(item.id)}
+                  className={`flex flex-col sm:flex-row sm:items-center gap-5 p-5 rounded-2xl border transition-all duration-300 cursor-pointer ${
+                    activeMerchId === item.id
+                      ? isDark
+                        ? "bg-[#18181c] border-zinc-700 shadow-md"
+                        : "bg-zinc-50 border-zinc-300 shadow-md"
+                      : isDark 
+                        ? "bg-[#111114]/50 border-zinc-900/60 hover:border-zinc-800" 
+                        : "bg-white border-zinc-200 hover:border-zinc-300"
                   }`}
                 >
-                  <div className="flex-1 pr-6">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="px-2 py-0.5 bg-red-100 text-red-650 dark:bg-red-950/40 dark:text-red-400 text-[10px] font-black uppercase tracking-widest rounded-md">
+                  {/* Thumbnail Image */}
+                  <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-100 dark:bg-zinc-900 shadow-sm">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <div className="flex-1 pr-2">
+                    <div className="flex items-center gap-3 mb-2 flex-wrap">
+                      <span className="px-2 py-0.5 bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-400 text-[10px] font-black uppercase tracking-widest rounded-md">
                         {item.badge}
                       </span>
-                      <h4 className="font-heading font-bold text-zinc-850 dark:text-white">{item.name}</h4>
+                      <h4 className="font-heading font-bold text-zinc-850 dark:text-white text-sm sm:text-base">{item.name}</h4>
                     </div>
                     <p className="text-xs text-zinc-400 dark:text-zinc-500 leading-relaxed">{item.description}</p>
                   </div>
-                  <div className="mt-4 sm:mt-0 flex items-center justify-between sm:justify-end gap-6 border-t sm:border-t-0 pt-4 sm:pt-0 border-zinc-100 dark:border-zinc-900 shrink-0">
+                  <div className="mt-4 sm:mt-0 flex items-center justify-between sm:justify-end gap-4 border-t sm:border-t-0 pt-4 sm:pt-0 border-zinc-100 dark:border-zinc-900 shrink-0">
                     <span className="text-base sm:text-lg font-black font-heading text-zinc-900 dark:text-amber-500">{item.price}</span>
                     
                     {/* CTA "¡Yo quiero!" (Alta visibilidad y contraste perfecto) */}
@@ -658,7 +679,7 @@ export default function Home() {
                       href="https://t.me/hispalisfangame"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-5 py-2.5 bg-red-600 hover:bg-red-750 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-md transition-colors duration-200 cursor-pointer active:scale-95"
+                      className="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-md transition-colors duration-200 cursor-pointer active:scale-95"
                     >
                       <ShoppingBag size={13} />
                       <span>¡Yo quiero!</span>
@@ -678,13 +699,13 @@ export default function Home() {
             }`}>
               <div className="relative w-full h-full rounded-2xl overflow-hidden">
                 <Image
-                  src="/merchan-web-1-1024x1024.png"
-                  alt="Hispalis Merchandising"
+                  src={activeMerchItem.image}
+                  alt={activeMerchItem.name}
                   fill
                   className="object-cover"
                 />
               </div>
-              <div className="absolute top-4 right-4 z-20 bg-red-600 text-white font-black text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-md border border-white/10">
+              <div className="absolute top-4 right-4 z-20 bg-gradient-to-r from-amber-500 via-amber-600 to-orange-500 text-white font-black text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-md border border-white/10">
                 Diseño Oficial
               </div>
             </div>
