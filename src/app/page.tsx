@@ -553,15 +553,20 @@ export default function Home() {
       </section>
 
       {/* SECCIÓN ACTUALIZACIONES Y NOTICIAS (Identidad Andaluza & Compacto) */}
-      <section className={`py-12 px-4 sm:px-6 lg:px-8 border-t border-b transition-colors duration-300 ${
-        isDark 
-          ? "border-zinc-900 bg-gradient-to-b from-[#050506] via-emerald-950/5 to-[#050506]" 
-          : "border-zinc-200 bg-gradient-to-b from-[#f4fbf7] via-white to-[#f4fbf7]"
-      }`}>
-        <div className="max-w-7xl mx-auto">
+      <section
+        className="py-16 px-4 sm:px-6 lg:px-8 border-t border-b border-slate-900/40 dark:border-slate-950 transition-colors duration-300 relative overflow-hidden"
+        style={{
+          backgroundColor: isDark ? "#050917" : "#09122a",
+          backgroundImage: isDark
+            ? "radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px)"
+            : "radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      >
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-10 text-left">
-            <h2 className="text-xs font-black uppercase tracking-widest text-red-650 dark:text-amber-500 mb-2">Actualizaciones</h2>
-            <p className="text-2xl sm:text-4xl font-heading font-black tracking-tight text-zinc-900 dark:text-white">Noticias y Actualizaciones</p>
+            <h2 className="text-xs font-black uppercase tracking-widest text-amber-500 dark:text-amber-400 mb-2">Actualizaciones</h2>
+            <p className="text-2xl sm:text-4xl font-heading font-black tracking-tight text-white">Noticias y Actualizaciones</p>
           </div>
 
           {/* Grid of 8 actual blogs */}
@@ -571,8 +576,8 @@ export default function Home() {
                 key={blog.id}
                 className={`group relative rounded-2xl overflow-hidden border flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-300 ${
                   isDark
-                    ? "bg-zinc-900/40 border-zinc-800 hover:border-zinc-700"
-                    : "bg-white border-zinc-200 hover:border-zinc-300"
+                    ? "bg-[#0b1226]/80 border-slate-800/80 hover:border-slate-700 text-white"
+                    : "bg-white border-slate-200 hover:border-slate-300 text-zinc-900"
                 }`}
               >
                 {/* Cover Image */}
@@ -593,12 +598,14 @@ export default function Home() {
                       <Clock size={11} />
                       <span>{blog.date}</span>
                     </div>
-                    <h3 className="font-heading font-bold text-xs sm:text-sm leading-snug text-zinc-850 dark:text-white line-clamp-3 group-hover:text-red-600 dark:group-hover:text-amber-500 transition-colors">
+                    <h3 className={`font-heading font-bold text-xs sm:text-sm leading-snug line-clamp-3 group-hover:text-red-500 dark:group-hover:text-amber-400 transition-colors ${
+                      isDark ? "text-white" : "text-zinc-800"
+                    }`}>
                       {blog.title}
                     </h3>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-xs font-bold text-red-600 dark:text-amber-500">
+                  <div className="mt-4 pt-3 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-xs font-bold text-red-655 dark:text-amber-500">
                     <span>Leer Artículo</span>
                     <ChevronRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </div>
