@@ -601,8 +601,8 @@ export default function Home() {
                 <article
                   className={`group relative rounded-2xl overflow-hidden border flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-300 ${
                     isDark
-                      ? "bg-[#0b1226]/80 border-blue-900/40 hover:border-blue-900/60 text-white"
-                      : "bg-white border-blue-900/20 hover:border-blue-900/40 text-zinc-900"
+                      ? "bg-[#0b1226]/80 border-blue-800 hover:border-blue-500 text-white"
+                      : "bg-white border-blue-800 hover:border-blue-500 text-zinc-900"
                   }`}
                 >
                   {/* Cover Image */}
@@ -646,7 +646,7 @@ export default function Home() {
         className={`py-16 sm:py-24 transition-colors duration-300 ${
           isDark
             ? "bg-gradient-to-b from-[#050506] via-[#09090b] to-[#050506]"
-            : "bg-gradient-to-b from-zinc-50 via-white to-slate-50"
+            : "bg-gradient-to-b from-zinc-100 via-white to-zinc-100"
         }`}
         id="tienda"
       >
