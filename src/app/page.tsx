@@ -644,14 +644,10 @@ export default function Home() {
 
       <section
         className={`py-16 sm:py-24 transition-colors duration-300 relative overflow-hidden ${
-          isDark ? "bg-[#050506]" : "bg-zinc-50"
+          isDark
+            ? "bg-[#050506] dark:bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] dark:from-zinc-900 dark:to-black dark:bg-none"
+            : "bg-zinc-100 bg-[radial-gradient(rgba(0,0,0,0.08)_1px,transparent_1px)] [background-size:20px_20px]"
         }`}
-        style={{
-          backgroundImage: isDark
-            ? "radial-gradient(circle at center, transparent 30%, #050506 90%), radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px)"
-            : "radial-gradient(circle at center, #ffffff 30%, #e4e4e7 100%), radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px)",
-          backgroundSize: "100% 100%, 24px 24px",
-        }}
         id="tienda"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
