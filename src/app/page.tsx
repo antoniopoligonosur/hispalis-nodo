@@ -182,11 +182,11 @@ export default function Home() {
           <nav className="hidden lg:flex items-center gap-8 text-base font-bold">
             {[
               { label: "Colección de cartas físicas", href: "https://hispalisfangame.com/cartas/" },
-              { label: "Aprende a jugar", href: "https://hispalisfangame.com/cartas/" },
-              { label: "Compra packs de cartas", href: "https://www.namekjuegos.com/inicio/116198-hispalis-proyecto-nodo-coleccion-primigenia-cartas.html" },
-              { label: "App móvil", href: "https://hispalisfangame.com/jugarenmovil/" },
-              { label: "El Flamador", href: "https://hispalisfangame.com/cartas/" },
-              { label: "Tienda", href: "https://www.namekjuegos.com/inicio/116198-hispalis-proyecto-nodo-coleccion-primigenia-cartas.html" }
+              { label: "Aprende a jugar", href: "https://hispalisfangame.com/cartas/duelojartible/" },
+              { label: "Compra packs de cartas", href: "https://www.namekjuegos.com/inicio/116592-527-hispalis-proyecto-nodo-duelo-jartible.html#/175,hispalis-proyecto-nodo-cartas,coleccion-primigenia-pack-20-cartas" },
+              { label: "App móvil", href: "https://play.google.com/store/apps/details?id=com.hispalisfangame.app&hl=es_419" },
+              { label: "El Flamador", href: "https://hispalisfangame.com/flamador/" },
+              { label: "Tienda", href: "https://hispalisfangame-tienda.com/" }
             ].map((link, idx) => (
               <a
                 key={idx}
@@ -309,11 +309,11 @@ export default function Home() {
           >
             {[
               { label: "Colección de cartas físicas", href: "https://hispalisfangame.com/cartas/" },
-              { label: "Aprende a jugar", href: "https://hispalisfangame.com/cartas/" },
-              { label: "Compra packs de cartas", href: "https://www.namekjuegos.com/inicio/116198-hispalis-proyecto-nodo-coleccion-primigenia-cartas.html" },
-              { label: "App móvil", href: "https://hispalisfangame.com/jugarenmovil/" },
-              { label: "El Flamador", href: "https://hispalisfangame.com/cartas/" },
-              { label: "Tienda", href: "https://www.namekjuegos.com/inicio/116198-hispalis-proyecto-nodo-coleccion-primigenia-cartas.html" }
+              { label: "Aprende a jugar", href: "https://hispalisfangame.com/cartas/duelojartible/" },
+              { label: "Compra packs de cartas", href: "https://www.namekjuegos.com/inicio/116592-527-hispalis-proyecto-nodo-duelo-jartible.html#/175,hispalis-proyecto-nodo-cartas,coleccion-primigenia-pack-20-cartas" },
+              { label: "App móvil", href: "https://play.google.com/store/apps/details?id=com.hispalisfangame.app&hl=es_419" },
+              { label: "El Flamador", href: "https://hispalisfangame.com/flamador/" },
+              { label: "Tienda", href: "https://hispalisfangame-tienda.com/" }
             ].map((link, idx) => (
               <a
                 key={idx}
