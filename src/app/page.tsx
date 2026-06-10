@@ -645,8 +645,8 @@ export default function Home() {
       <section
         className={`py-16 sm:py-24 transition-colors duration-300 relative overflow-hidden ${
           isDark
-            ? "bg-[#050506] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-950 via-zinc-900 to-black"
-            : "bg-white bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-zinc-50 to-zinc-200/60"
+            ? "bg-[#050506] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:32px_32px]"
+            : "bg-white bg-[linear-gradient(to_right,rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.05)_1px,transparent_1px)] [background-size:32px_32px]"
         }`}
         id="tienda"
       >
