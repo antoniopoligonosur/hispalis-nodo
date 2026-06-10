@@ -393,7 +393,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
 
         {/* Bottom Feathering Mask */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent via-white/20 to-white dark:via-[#09090b]/20 dark:to-[#09090b] z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-b from-transparent via-white/5 to-white dark:via-[#09090b]/5 dark:to-[#09090b] z-10 pointer-events-none" />
 
         {/* Content Wrapper */}
         <div className="relative z-20 max-w-7xl mx-auto h-full flex items-center px-4 sm:px-6 lg:px-8">
