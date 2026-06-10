@@ -403,9 +403,6 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl flex flex-col items-start text-left"
           >
-            <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-400 mb-6 border border-amber-200/20 shadow-sm">
-              FANGAME POKÉMON GRATUITO
-            </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-heading leading-tight tracking-tight mb-4 uppercase bg-gradient-to-r from-red-600 via-amber-500 to-red-600 bg-clip-text text-transparent">
               Hispalis: Proyecto NODO
             </h1>
@@ -506,7 +503,6 @@ export default function Home() {
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <ScrollReveal>
           <div className="text-center mb-12">
-          <h2 className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-500 mb-3">Accesos Directos</h2>
           <p className="text-2xl sm:text-4xl font-heading font-black tracking-tight">Enlaces Oficiales del Proyecto</p>
         </div>
 
