@@ -372,8 +372,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl flex flex-col items-start text-left"
           >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-400 mb-6 border border-amber-200/20 shadow-sm">
-              🎮 Fangame Pokémon Gratuito
+            <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-400 mb-6 border border-amber-200/20 shadow-sm">
+              FANGAME POKÉMON GRATUITO
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-heading leading-tight tracking-tight mb-4 uppercase bg-gradient-to-r from-red-600 via-amber-500 to-red-600 bg-clip-text text-transparent">
               Hispalis: Proyecto NODO
@@ -390,20 +390,16 @@ export default function Home() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mt-6">
               <a
-                href="https://hispalisfangame.com/jugarenpc/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#descarga"
                 className="bg-red-650 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-md transition-all cursor-pointer"
               >
-                Descargar para PC
+                Jugar Ahora
               </a>
               <a
-                href="https://hispalisfangame.com/jugarenmovil/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-zinc-400 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold px-6 py-3 rounded-md transition-all cursor-pointer"
+                href="#tienda"
+                className="border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-md transition-all cursor-pointer"
               >
-                Descargar para Android
+                Colección de Cartas
               </a>
             </div>
           </motion.div>
@@ -411,7 +407,7 @@ export default function Home() {
       </section>
 
       {/* NUEVA SECCIÓN EXCLUSIVA DE DESCARGAS */}
-      <section className="relative w-full overflow-hidden border-t border-b border-zinc-200 dark:border-zinc-900 py-20 px-4 sm:px-6 lg:px-8">
+      <section id="descarga" className="relative w-full overflow-hidden border-t border-b border-zinc-200 dark:border-zinc-900 py-20 px-4 sm:px-6 lg:px-8">
         {/* Background Image integrating banner-demo */}
         <div className="absolute inset-0 z-0">
           <Image
