@@ -392,6 +392,9 @@ export default function Home() {
         {/* Mask Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
 
+        {/* Bottom Feathering Mask */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white dark:to-[#09090b] z-10 pointer-events-none" />
+
         {/* Content Wrapper */}
         <div className="relative z-20 max-w-7xl mx-auto h-full flex items-center px-4 sm:px-6 lg:px-8">
           <motion.div
