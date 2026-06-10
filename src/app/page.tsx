@@ -601,8 +601,8 @@ export default function Home() {
                 <article
                   className={`group relative rounded-2xl overflow-hidden border flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-300 ${
                     isDark
-                      ? "bg-[#0b1226]/80 border-slate-800/80 hover:border-slate-700 text-white"
-                      : "bg-white border-slate-200 hover:border-slate-300 text-zinc-900"
+                      ? "bg-[#0b1226]/80 border-blue-900/40 hover:border-blue-900/60 text-white"
+                      : "bg-white border-blue-900/20 hover:border-blue-900/40 text-zinc-900"
                   }`}
                 >
                   {/* Cover Image */}
@@ -630,7 +630,7 @@ export default function Home() {
                       </h3>
                     </div>
 
-                    <div className="mt-4 pt-3 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-xs font-bold text-red-655 dark:text-amber-500">
+                    <div className="mt-4 pt-3 border-t border-blue-900/20 dark:border-blue-900/40 flex items-center justify-between text-xs font-bold text-red-655 dark:text-amber-500">
                       <span>Leer Artículo</span>
                       <ChevronRight size={13} className="group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -642,8 +642,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="tienda">
-        {/* Cabecera de Merchandising */}
+      <section
+        className={`py-16 sm:py-24 transition-colors duration-300 ${
+          isDark
+            ? "bg-gradient-to-b from-[#050506] via-[#09090b] to-[#050506]"
+            : "bg-gradient-to-b from-zinc-50 via-white to-slate-50"
+        }`}
+        id="tienda"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Cabecera de Merchandising */}
         <div className="w-full text-left mb-12">
           <h2 className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-500 mb-3">Exclusivo</h2>
           <h3 className="text-3xl sm:text-5xl font-heading font-black tracking-tight mb-6 text-zinc-900 dark:text-white">
@@ -735,7 +743,8 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* FOOTER CORPORATIVO PREMIUM */}
       <footer className={`relative border-t transition-colors duration-300 ${
