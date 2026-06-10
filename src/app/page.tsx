@@ -627,21 +627,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN MERCHANDISING (Accesibilidad de botones corregida) */}
       <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="tienda">
+        {/* Cabecera de Merchandising */}
+        <div className="w-full text-left mb-12">
+          <h2 className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-500 mb-3">Exclusivo</h2>
+          <h3 className="text-3xl sm:text-5xl font-heading font-black tracking-tight mb-6 text-zinc-900 dark:text-white">
+            Consigue nuestro merchan exclusivo <span className="text-red-600 dark:text-red-500">antes de que se agote</span>
+          </h3>
+          <p className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-3xl">
+            Llévate a casa piezas únicas del proyecto hechas al 100% por nosotros. Contamos con 5 modelos de camisetas exclusivas, 3 diseños de pósters coleccionables de alta calidad artística, chapas con los Pokémon iniciales y pegatinas increíbles. Cada artículo apoya directamente al desarrollo del fangame.
+          </p>
+        </div>
+
+        {/* Contenedor de Productos Asimétrico y Centrado Verticalmente */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Merchan Left Column */}
-          <div className="lg:col-span-7 flex flex-col text-left">
-            <h2 className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-500 mb-3">Exclusivo</h2>
-            <h3 className="text-3xl sm:text-5xl font-heading font-black tracking-tight mb-6 text-zinc-900 dark:text-white">
-              Consigue nuestro merchan exclusivo <span className="text-red-600 dark:text-red-500">antes de que se agote</span>
-            </h3>
-            
-            <p className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8 max-w-xl">
-              Llévate a casa piezas únicas del proyecto hechas al 100% por nosotros. Contamos con 5 modelos de camisetas exclusivas, 3 diseños de pósters coleccionables de alta calidad artística, chapas con los Pokémon iniciales y pegatinas increíbles. Cada artículo apoya directamente al desarrollo del fangame.
-            </p>
-
+          <div className="lg:col-span-7 w-full flex flex-col text-left">
             <div className="space-y-4">
               {merchanItems.map((item) => (
                 <div
