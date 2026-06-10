@@ -192,18 +192,7 @@ export default function Home() {
 
       {/* HEADER / NAVBAR */}
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 backdrop-blur-md border-b ${
-          scrolled
-            ? "border-zinc-200 dark:border-zinc-800 shadow-md"
-            : "border-zinc-200/50 dark:border-zinc-800/50"
-        }`}
-        style={{
-          backgroundImage: isDark
-            ? "linear-gradient(to bottom, rgba(24, 24, 27, 0.8), rgba(24, 24, 27, 0.8)), url('/fondo-header.png')"
-            : "linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/fondo-header.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className="absolute top-0 left-0 w-full bg-zinc-950/30 backdrop-blur-md border-b border-white/5 z-50"
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between whitespace-nowrap gap-4">
           <Link href="/" className="flex items-center gap-3 shrink-0">
@@ -240,7 +229,7 @@ export default function Home() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-650 hover:text-red-600 dark:text-zinc-300 dark:hover:text-amber-500 transition-colors duration-200"
+                className="text-zinc-200 hover:text-white transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -433,7 +422,7 @@ export default function Home() {
                   e.preventDefault();
                   document.getElementById("descarga")?.scrollIntoView({ behavior: "smooth", block: "center" });
                 }}
-                className="bg-red-650 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-md transition-all cursor-pointer"
+                className="bg-red-650 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-md shadow-lg shadow-red-950/20 transition-all cursor-pointer"
               >
                 Jugar Ahora
               </button>
