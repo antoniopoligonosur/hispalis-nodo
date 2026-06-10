@@ -649,7 +649,7 @@ export default function Home() {
         style={{
           backgroundImage: isDark
             ? "radial-gradient(circle at center, transparent 30%, #050506 90%), radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px)"
-            : "radial-gradient(circle at center, transparent 30%, #f4f4f5 90%), radial-gradient(#00000006 1px, transparent 1px)",
+            : "radial-gradient(circle at center, #ffffff 30%, #e4e4e7 100%), radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px)",
           backgroundSize: "100% 100%, 24px 24px",
         }}
         id="tienda"
