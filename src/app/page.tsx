@@ -601,8 +601,8 @@ export default function Home() {
                 <article
                   className={`group relative rounded-2xl overflow-hidden border flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-300 ${
                     isDark
-                      ? "bg-[#0b1226]/80 border-blue-800 hover:border-blue-500 text-white"
-                      : "bg-white border-blue-800 hover:border-blue-500 text-zinc-900"
+                      ? "bg-[#0b1226]/80 border-black/20 hover:border-black/50 text-white"
+                      : "bg-white border-black/20 hover:border-black/50 text-zinc-900"
                   }`}
                 >
                   {/* Cover Image */}
@@ -643,11 +643,15 @@ export default function Home() {
       </section>
 
       <section
-        className={`py-16 sm:py-24 transition-colors duration-300 ${
-          isDark
-            ? "bg-gradient-to-b from-[#050506] via-[#09090b] to-[#050506]"
-            : "bg-gradient-to-b from-zinc-100 via-white to-zinc-100"
+        className={`py-16 sm:py-24 transition-colors duration-300 relative overflow-hidden ${
+          isDark ? "bg-[#050506]" : "bg-zinc-50"
         }`}
+        style={{
+          backgroundImage: isDark
+            ? "radial-gradient(circle at center, transparent 30%, #050506 90%), radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px)"
+            : "radial-gradient(circle at center, transparent 30%, #f4f4f5 90%), radial-gradient(#00000006 1px, transparent 1px)",
+          backgroundSize: "100% 100%, 24px 24px",
+        }}
         id="tienda"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
