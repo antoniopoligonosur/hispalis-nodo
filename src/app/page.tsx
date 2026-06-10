@@ -350,14 +350,27 @@ export default function Home() {
       </AnimatePresence>
 
       {/* HERO SECTION (Limpieza y estética Nintendo corporativa) */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
-          {/* Hero Left Content */}
+      <section className="relative w-full h-[80vh] lg:h-[85vh] overflow-hidden bg-zinc-950">
+        {/* Gameplay Video Loop */}
+        <video
+          src="/gameplay.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+        />
+
+        {/* Mask Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
+
+        {/* Content Wrapper */}
+        <div className="relative z-20 max-w-7xl mx-auto h-full flex items-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-6 flex flex-col items-start text-left"
+            className="max-w-2xl flex flex-col items-start text-left"
           >
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-400 mb-6 border border-amber-200/20 shadow-sm">
               🎮 Fangame Pokémon Gratuito
@@ -366,38 +379,32 @@ export default function Home() {
               Hispalis: Proyecto NODO
             </h1>
 
-            <h2 className="text-lg sm:text-xl font-bold text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6">
+            <h2 className="text-lg sm:text-xl font-bold text-zinc-300 leading-relaxed mb-6">
               Descubre el videojuego gratuito hecho por dos fans sevillanos amantes de Pokémon que está revolucionando a toda Andalucía.
             </h2>
 
-            <p className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-xl">
               Sumérgete en la historia de Hispalis, una Sevilla post-apocalíptica desolada tras una gran pandemia y donde ahora reinan los Pokémon.
             </p>
-          </motion.div>
 
-          {/* Hero Right Image (Clean, no AI indicators) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-6 relative flex items-center justify-center"
-          >
-            <div className={`relative w-full aspect-video rounded-3xl overflow-hidden border p-1 shadow-xl transition-all duration-300 ${
-              isDark 
-                ? "border-zinc-800 bg-[#16161a]" 
-                : "border-zinc-200 bg-white"
-            }`}>
-              <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                <Image
-                  src="/hero.png"
-                  alt="Hispalis: Proyecto NODO - Sevilla Pokémon"
-                  fill
-                  priority
-                  quality={100}
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4 mt-6">
+              <a
+                href="https://hispalisfangame.com/jugarenpc/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-red-650 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-md transition-all cursor-pointer"
+              >
+                Descargar para PC
+              </a>
+              <a
+                href="https://hispalisfangame.com/jugarenmovil/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-zinc-400 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold px-6 py-3 rounded-md transition-all cursor-pointer"
+              >
+                Descargar para Android
+              </a>
             </div>
           </motion.div>
         </div>
