@@ -158,7 +158,7 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex flex-row items-center justify-between whitespace-nowrap gap-4">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between whitespace-nowrap gap-4">
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <div className="relative w-10 h-10 overflow-hidden">
               <Image
@@ -179,7 +179,7 @@ export default function Home() {
           </Link>
 
           {/* Desktop Navigation Links (Large single row) */}
-          <nav className="hidden xl:flex items-center gap-8 text-base font-bold">
+          <nav className="hidden lg:flex items-center gap-8 text-base font-bold">
             {[
               { label: "Colección de cartas físicas", href: "https://hispalisfangame.com/cartas/" },
               { label: "Aprende a jugar", href: "https://hispalisfangame.com/cartas/" },
@@ -250,7 +250,7 @@ export default function Home() {
           </div>
 
           {/* Mobile Navigation controls */}
-          <div className="flex items-center gap-3 xl:hidden shrink-0">
+          <div className="flex items-center gap-3 lg:hidden shrink-0">
             <motion.button
               onClick={() => setIsDark(!isDark)}
               className="p-1 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 cursor-pointer"
@@ -301,7 +301,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className={`fixed inset-x-0 top-20 z-40 w-full border-b xl:hidden flex flex-col p-6 gap-5 shadow-xl ${
+            className={`fixed inset-x-0 top-20 z-40 w-full border-b lg:hidden flex flex-col p-6 gap-5 shadow-xl ${
               isDark
                 ? "bg-[#050506]/98 border-zinc-900 text-zinc-300"
                 : "bg-white/98 border-zinc-200 text-zinc-900"
