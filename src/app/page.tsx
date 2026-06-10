@@ -406,8 +406,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* NUEVA SECCIÓN EXCLUSIVA DE DESCARGAS */}
-      <section id="descarga" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-6">
+      {/* SECCIÓN DE ENLACES Y DESCARGAS (Cuadrícula Geométrica) */}
+      <section
+        className="w-full py-12 transition-colors duration-300 bg-white bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:40px_40px] dark:bg-[#09090b] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)]"
+      >
+        <div id="descarga" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-6">
         <div className="relative w-full overflow-hidden rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl py-16 px-6 sm:px-10 lg:px-12 border border-zinc-200 dark:border-zinc-900">
           {/* Background Image integrating banner-demo */}
           <div className="absolute inset-0 z-0">
@@ -458,10 +461,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* SECCIÓN ACCIONES RÁPIDAS (Integración de Imágenes) */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-500 mb-3">Accesos Directos</h2>
           <p className="text-2xl sm:text-4xl font-heading font-black tracking-tight">Enlaces Oficiales del Proyecto</p>
@@ -574,7 +577,8 @@ export default function Home() {
             </div>
           </motion.a>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* SECCIÓN ACTUALIZACIONES Y NOTICIAS (Identidad Andaluza & Compacto) */}
       <section
