@@ -442,7 +442,11 @@ export default function Home() {
 
       {/* SECCIÓN DE ENLACES Y DESCARGAS (Cuadrícula Geométrica) */}
       <section
-        className="w-full py-12 transition-colors duration-300 bg-white bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:40px_40px] dark:bg-[#09090b] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)]"
+        className={`w-full py-12 transition-colors duration-300 [background-size:40px_40px] ${
+          isDark
+            ? "bg-[#09090b] bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)]"
+            : "bg-white bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)]"
+        }`}
       >
         <div id="descarga" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-6">
           <ScrollReveal>
@@ -529,7 +533,9 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 text-left">
-                <h3 className="text-lg font-bold font-heading mb-2 text-zinc-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+                <h3 className={`text-lg font-bold font-heading mb-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors ${
+                  isDark ? "text-white" : "text-zinc-900"
+                }`}>
                   Mira toda la colección
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
@@ -564,7 +570,9 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 text-left">
-                <h3 className="text-lg font-bold font-heading mb-2 text-zinc-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-500 transition-colors">
+                <h3 className={`text-lg font-bold font-heading mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-500 transition-colors ${
+                  isDark ? "text-white" : "text-zinc-900"
+                }`}>
                   Venta online aquí
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
@@ -599,7 +607,9 @@ export default function Home() {
                 />
               </div>
               <div className="p-6 text-left">
-                <h3 className="text-lg font-bold font-heading mb-2 text-zinc-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                <h3 className={`text-lg font-bold font-heading mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors ${
+                  isDark ? "text-white" : "text-zinc-900"
+                }`}>
                   Pokédex de Hispalis
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
@@ -703,7 +713,9 @@ export default function Home() {
             {/* Cabecera de Merchandising */}
             <div className="w-full text-left mb-12">
           <h2 className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-500 mb-3">Exclusivo</h2>
-          <h3 className="text-3xl sm:text-5xl font-heading font-black tracking-tight mb-6 text-zinc-900 dark:text-white">
+          <h3 className={`text-3xl sm:text-5xl font-heading font-black tracking-tight mb-6 ${
+            isDark ? "text-white" : "text-zinc-900"
+          }`}>
             Consigue nuestro merchan exclusivo<br />
             <span className="text-red-600 dark:text-red-500">antes de que se agote</span>
           </h3>
@@ -752,7 +764,9 @@ export default function Home() {
                     <p className="text-xs text-zinc-400 dark:text-zinc-500 leading-relaxed">{item.description}</p>
                   </div>
                   <div className="mt-4 sm:mt-0 flex items-center justify-between sm:justify-end gap-4 border-t sm:border-t-0 pt-4 sm:pt-0 border-zinc-100 dark:border-zinc-900 shrink-0">
-                    <span className="text-base sm:text-lg font-black font-heading text-zinc-900 dark:text-white">{item.price}</span>
+                    <span className={`text-base sm:text-lg font-black font-heading ${
+                      isDark ? "text-white" : "text-zinc-900"
+                    }`}>{item.price}</span>
                     
                     {/* CTA "¡Yo quiero!" (Alta visibilidad y contraste perfecto) */}
                     <a
