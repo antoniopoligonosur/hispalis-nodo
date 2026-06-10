@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     canonical: "https://hispalisfangame.com",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/POKEMON-HISPALIS-LOGO-v3-big-300x251.webp",
   },
 };
 

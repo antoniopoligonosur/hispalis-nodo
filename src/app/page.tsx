@@ -426,7 +426,7 @@ export default function Home() {
                   e.preventDefault();
                   document.getElementById("descarga")?.scrollIntoView({ behavior: "smooth", block: "center" });
                 }}
-                className="bg-red-650 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-md shadow-lg shadow-red-950/20 transition-all cursor-pointer"
+                className="bg-red-650 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-md transition-all cursor-pointer"
               >
                 Jugar Ahora
               </button>
