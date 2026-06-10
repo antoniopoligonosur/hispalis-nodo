@@ -113,6 +113,45 @@ const merchanItems = [
   }
 ];
 
+// Scroll reveal wrapper component
+function ScrollReveal({ children }: { children: React.ReactNode }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const domRef = React.useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const current = domRef.current;
+    if (current) {
+      observer.observe(current);
+    }
+
+    return () => {
+      if (current) {
+        observer.unobserve(current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      ref={domRef}
+      className={`transition-all duration-700 ease-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
+
 export default function Home() {
   const [isDark, setIsDark] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -389,18 +428,24 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mt-6">
-              <a
-                href="#descarga"
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("descarga")?.scrollIntoView({ behavior: "smooth", block: "center" });
+                }}
                 className="bg-red-650 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-md transition-all cursor-pointer"
               >
                 Jugar Ahora
-              </a>
-              <a
-                href="#tienda"
+              </button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("tienda")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
                 className="border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-md transition-all cursor-pointer"
               >
-                Colección de Cartas
-              </a>
+                Nuestro Merchan
+              </button>
             </div>
           </motion.div>
         </div>
@@ -411,7 +456,8 @@ export default function Home() {
         className="w-full py-12 transition-colors duration-300 bg-white bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:40px_40px] dark:bg-[#09090b] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)]"
       >
         <div id="descarga" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-6">
-        <div className="relative w-full overflow-hidden rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl py-16 px-6 sm:px-10 lg:px-12 border border-zinc-200 dark:border-zinc-900">
+          <ScrollReveal>
+            <div className="relative w-full overflow-hidden rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl py-16 px-6 sm:px-10 lg:px-12 border border-zinc-200 dark:border-zinc-900">
           {/* Background Image integrating banner-demo */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -460,12 +506,14 @@ export default function Home() {
               </a>
             </div>
           </div>
+          </div>
+          </ScrollReveal>
         </div>
-      </div>
 
       {/* SECCIÓN ACCIONES RÁPIDAS (Integración de Imágenes) */}
       <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        <ScrollReveal>
+          <div className="text-center mb-12">
           <h2 className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-500 mb-3">Accesos Directos</h2>
           <p className="text-2xl sm:text-4xl font-heading font-black tracking-tight">Enlaces Oficiales del Proyecto</p>
         </div>
@@ -577,6 +625,7 @@ export default function Home() {
             </div>
           </motion.a>
         </div>
+        </ScrollReveal>
       </div>
     </section>
 
@@ -592,7 +641,8 @@ export default function Home() {
         }}
       >
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="mb-10 text-left">
+          <ScrollReveal>
+            <div className="mb-10 text-left">
             <h2 className="text-xs font-black uppercase tracking-widest text-amber-500 dark:text-amber-400 mb-2">Actualizaciones</h2>
             <p className="text-2xl sm:text-4xl font-heading font-black tracking-tight text-white">Noticias y Actualizaciones</p>
           </div>
@@ -648,6 +698,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -660,8 +711,9 @@ export default function Home() {
         id="tienda"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Cabecera de Merchandising */}
-        <div className="w-full text-left mb-12">
+          <ScrollReveal>
+            {/* Cabecera de Merchandising */}
+            <div className="w-full text-left mb-12">
           <h2 className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-500 mb-3">Exclusivo</h2>
           <h3 className="text-3xl sm:text-5xl font-heading font-black tracking-tight mb-6 text-zinc-900 dark:text-white">
             Consigue nuestro merchan exclusivo<br />
@@ -752,6 +804,7 @@ export default function Home() {
           </div>
 
         </div>
+        </ScrollReveal>
       </div>
     </section>
 
