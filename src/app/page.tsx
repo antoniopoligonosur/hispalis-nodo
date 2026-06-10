@@ -407,53 +407,55 @@ export default function Home() {
       </section>
 
       {/* NUEVA SECCIÓN EXCLUSIVA DE DESCARGAS */}
-      <section id="descarga" className="relative w-full overflow-hidden border-t border-b border-zinc-200 dark:border-zinc-900 py-20 px-4 sm:px-6 lg:px-8">
-        {/* Background Image integrating banner-demo */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/banner-demo.png"
-            alt="Banner Demo Hispalis"
-            fill
-            className="filter brightness-[0.4] dark:brightness-[0.3]"
-            style={{ objectFit: "cover", objectPosition: "center top" }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-red-950/20 via-zinc-950/80 to-zinc-950/90 z-1" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-left">
-          <div className="max-w-2xl">
-            <h2 className="text-2xl sm:text-4xl font-heading font-black text-white mb-4">Descarga la Demo de Hispalis</h2>
-            <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-              Obtén de manera 100% gratuita el instalador para PC o la app para tu dispositivo Android y empieza a recorrer la Sevilla de Hispalis.
-            </p>
+      <section id="descarga" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-6">
+        <div className="relative w-full overflow-hidden rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl py-16 px-6 sm:px-10 lg:px-12 border border-zinc-200 dark:border-zinc-900">
+          {/* Background Image integrating banner-demo */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/banner-demo.png"
+              alt="Banner Demo Hispalis"
+              fill
+              className="filter brightness-[0.4] dark:brightness-[0.3]"
+              style={{ objectFit: "cover", objectPosition: "center top" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-red-950/20 via-zinc-950/80 to-zinc-950/90 z-1" />
           </div>
-          
-          {/* Download Buttons (Gaming Premium) */}
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto">
-            <a
-              href="https://hispalisfangame.com/jugarenpc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-2xl flex items-center justify-center gap-3 shadow-lg transition-colors duration-200 cursor-pointer border border-red-500/20 whitespace-nowrap active:scale-95"
-            >
-              <Laptop size={22} />
-              <div className="text-left">
-                <span className="block text-[9px] uppercase tracking-wider font-semibold opacity-80">Jugar en Ordenador</span>
-                <span className="block text-sm font-black">Descargar para PC</span>
-              </div>
-            </a>
-            <a
-              href="https://hispalisfangame.com/jugarenmovil/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-zinc-800 hover:bg-zinc-700 text-white font-bold rounded-2xl flex items-center justify-center gap-3 shadow-lg transition-colors duration-200 cursor-pointer border border-zinc-700 whitespace-nowrap active:scale-95"
-            >
-              <Smartphone size={22} />
-              <div className="text-left">
-                <span className="block text-[9px] uppercase tracking-wider font-semibold opacity-80">Jugar en Teléfono</span>
-                <span className="block text-sm font-black">Descargar para Android</span>
-              </div>
-            </a>
+
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-left w-full">
+            <div className="max-w-2xl">
+              <h2 className="text-2xl sm:text-4xl font-heading font-black text-white mb-4">Descarga la Demo de Hispalis</h2>
+              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+                Obtén de manera 100% gratuita el instalador para PC o la app para tu dispositivo Android y empieza a recorrer la Sevilla de Hispalis.
+              </p>
+            </div>
+            
+            {/* Download Buttons (Gaming Premium) */}
+            <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto">
+              <a
+                href="https://hispalisfangame.com/jugarenpc/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-2xl flex items-center justify-center gap-3 shadow-lg transition-colors duration-200 cursor-pointer border border-red-500/20 whitespace-nowrap active:scale-95"
+              >
+                <Laptop size={22} />
+                <div className="text-left">
+                  <span className="block text-[9px] uppercase tracking-wider font-semibold opacity-80">Jugar en Ordenador</span>
+                  <span className="block text-sm font-black">Descargar para PC</span>
+                </div>
+              </a>
+              <a
+                href="https://hispalisfangame.com/jugarenmovil/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-zinc-800 hover:bg-zinc-700 text-white font-bold rounded-2xl flex items-center justify-center gap-3 shadow-lg transition-colors duration-200 cursor-pointer border border-zinc-700 whitespace-nowrap active:scale-95"
+              >
+                <Smartphone size={22} />
+                <div className="text-left">
+                  <span className="block text-[9px] uppercase tracking-wider font-semibold opacity-80">Jugar en Teléfono</span>
+                  <span className="block text-sm font-black">Descargar para Android</span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </section>
