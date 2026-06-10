@@ -632,7 +632,8 @@ export default function Home() {
         <div className="w-full text-left mb-12">
           <h2 className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-500 mb-3">Exclusivo</h2>
           <h3 className="text-3xl sm:text-5xl font-heading font-black tracking-tight mb-6 text-zinc-900 dark:text-white">
-            Consigue nuestro merchan exclusivo <span className="text-red-600 dark:text-red-500">antes de que se agote</span>
+            Consigue nuestro merchan exclusivo<br />
+            <span className="text-red-600 dark:text-red-500">antes de que se agote</span>
           </h3>
           <p className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-3xl">
             Llévate a casa piezas únicas del proyecto hechas al 100% por nosotros. Contamos con 5 modelos de camisetas exclusivas, 3 diseños de pósters coleccionables de alta calidad artística, chapas con los Pokémon iniciales y pegatinas increíbles. Cada artículo apoya directamente al desarrollo del fangame.
@@ -649,7 +650,7 @@ export default function Home() {
                 <div
                   key={item.id}
                   onMouseEnter={() => setActiveMerchId(item.id)}
-                  className={`flex flex-col sm:flex-row sm:items-center gap-5 p-5 rounded-2xl border transition-all duration-300 cursor-pointer ${
+                  className={`flex flex-col sm:flex-row sm:items-center gap-5 p-5 rounded-2xl border transition-all duration-300 ease-in-out hover:scale-[1.02] cursor-pointer ${
                     activeMerchId === item.id
                       ? isDark
                         ? "bg-[#18181c] border-zinc-700 shadow-md"
