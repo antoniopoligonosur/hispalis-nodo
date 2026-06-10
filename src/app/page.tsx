@@ -752,7 +752,7 @@ export default function Home() {
                     <p className="text-xs text-zinc-400 dark:text-zinc-500 leading-relaxed">{item.description}</p>
                   </div>
                   <div className="mt-4 sm:mt-0 flex items-center justify-between sm:justify-end gap-4 border-t sm:border-t-0 pt-4 sm:pt-0 border-zinc-100 dark:border-zinc-900 shrink-0">
-                    <span className="text-base sm:text-lg font-black font-heading text-zinc-900 dark:text-amber-500">{item.price}</span>
+                    <span className="text-base sm:text-lg font-black font-heading text-zinc-900 dark:text-white">{item.price}</span>
                     
                     {/* CTA "¡Yo quiero!" (Alta visibilidad y contraste perfecto) */}
                     <a
