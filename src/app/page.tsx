@@ -393,7 +393,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
 
         {/* Bottom Feathering Mask */}
-        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-b from-transparent via-white/5 to-white dark:via-[#09090b]/5 dark:to-[#09090b] z-10 pointer-events-none" />
+        <div className={`absolute bottom-0 left-0 right-0 h-8 z-10 pointer-events-none ${
+          isDark
+            ? "bg-gradient-to-b from-transparent via-[#09090b]/5 to-[#09090b]"
+            : "bg-gradient-to-b from-transparent via-white/5 to-white"
+        }`} />
 
         {/* Content Wrapper */}
         <div className="relative z-20 max-w-7xl mx-auto h-full flex items-center px-4 sm:px-6 lg:px-8">
@@ -719,7 +723,9 @@ export default function Home() {
             Consigue nuestro merchan exclusivo<br />
             <span className="text-red-600 dark:text-red-500">antes de que se agote</span>
           </h3>
-          <p className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-3xl">
+          <p className={`text-sm sm:text-base leading-relaxed max-w-3xl ${
+            isDark ? "text-zinc-300" : "text-zinc-500"
+          }`}>
             Llévate a casa piezas únicas del proyecto hechas al 100% por nosotros. Contamos con 5 modelos de camisetas exclusivas, 3 diseños de pósters coleccionables de alta calidad artística, chapas con los Pokémon iniciales y pegatinas increíbles. Cada artículo apoya directamente al desarrollo del fangame.
           </p>
         </div>
