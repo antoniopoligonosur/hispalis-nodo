@@ -24,56 +24,64 @@ const blogs = [
     title: "Tsunami de novedades en las cartas de Hispalis: nueva colección, nuevas normas, más Torneos…",
     date: "septiembre 29, 2025",
     image: "/IMG-PORTADA-COLECCION-INVICTA-Y-MARIANA-CARTAS-768x432.png",
-    category: "Torneos & Cartas"
+    category: "Torneos & Cartas",
+    url: "https://hispalisfangame.com/tsunami-de-novedades-en-las-cartas-de-hispalis/"
   },
   {
     id: 2,
     title: "La APP móvil de Hispalis Cardgame recibe su primera gran actualización",
     date: "junio 9, 2025",
     image: "/WhatsApp-Image-2025-06-05-at-02.46.05-e1749486169350-768x432.jpeg",
-    category: "App Móvil"
+    category: "App Móvil",
+    url: "https://hispalisfangame.com/hispalis-cardgame-gran-actualizacion/"
   },
   {
     id: 3,
     title: "¡Última hora! Estos son los mejores jugadores de Duelo Jartible y los últimos cambios que habrá en la colección",
     date: "mayo 27, 2025",
     image: "/photo_5859611311019770795_y-e1748388061986-768x432.jpg",
-    category: "Comunidad"
+    category: "Comunidad",
+    url: "https://hispalisfangame.com/los-mejores-jugadores-de-duelo-jartible-y-los-ultimos-cambios/"
   },
   {
     id: 4,
     title: "Ya es oficial: estos son los cambios de normas que se introducirán en Duelo Jartible",
     date: "mayo 3, 2025",
     image: "/WhatsApp-Image-2025-05-03-at-13.58.08-e1746273581533-768x435.jpeg",
-    category: "Normas"
+    category: "Normas",
+    url: "https://hispalisfangame.com/cambios-de-normas-en-duelo-jartible/"
   },
   {
     id: 5,
     title: "Todo lo que necesitas saber sobre las actualizaciones de la colección de cartas y próximos torneos",
     date: "marzo 9, 2025",
     image: "/torneo-cartas-namek-ok-e1741533541374-768x433.png",
-    category: "Actualizaciones"
+    category: "Actualizaciones",
+    url: "https://hispalisfangame.com/actualizacion-de-cartas-y-torneos/"
   },
   {
     id: 6,
     title: "Llega el parche 4.2 de Hispalis: el más grande hasta la fecha… ¡Y el último!",
     date: "diciembre 27, 2024",
     image: "/Descarga-la-demo-aqui-vf.png",
-    category: "Parche PC"
+    category: "Parche PC",
+    url: "https://hispalisfangame.com/parche4-2/"
   },
   {
     id: 7,
     title: "Subido el parche 4.1: ¡todas las novedades!",
     date: "diciembre 21, 2024",
     image: "/Juan-y-Medio-1024x763-1-e1734787706818-768x432.jpg",
-    category: "Novedades"
+    category: "Novedades",
+    url: "https://hispalisfangame.com/subido-el-parche-4-1-todas-las-novedades/"
   },
   {
     id: 8,
     title: "Dónde comprar las famosas cartas Pokémon de Sevilla que se agotaron en un día",
     date: "diciembre 12, 2024",
     image: "/WhatsApp-Image-2024-12-10-at-14.58.57-768x432.webp",
-    category: "Venta Física"
+    category: "Venta Física",
+    url: "https://hispalisfangame.com/dondecomprarcartaspokemonhispalis/"
   }
 ];
 
@@ -583,45 +591,52 @@ export default function Home() {
           {/* Grid of 8 actual blogs */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {blogs.map((blog) => (
-              <article
+              <Link
                 key={blog.id}
-                className={`group relative rounded-2xl overflow-hidden border flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-300 ${
-                  isDark
-                    ? "bg-[#0b1226]/80 border-slate-800/80 hover:border-slate-700 text-white"
-                    : "bg-white border-slate-200 hover:border-slate-300 text-zinc-900"
-                }`}
+                href={blog.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full transition-transform duration-300 ease-in-out hover:scale-[1.02]"
               >
-                {/* Cover Image */}
-                <div className="relative aspect-video w-full overflow-hidden bg-zinc-200 dark:bg-zinc-900">
-                  <Image
-                    src={blog.image}
-                    alt={blog.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
+                <article
+                  className={`group relative rounded-2xl overflow-hidden border flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-300 ${
+                    isDark
+                      ? "bg-[#0b1226]/80 border-slate-800/80 hover:border-slate-700 text-white"
+                      : "bg-white border-slate-200 hover:border-slate-300 text-zinc-900"
+                  }`}
+                >
+                  {/* Cover Image */}
+                  <div className="relative aspect-video w-full overflow-hidden bg-zinc-200 dark:bg-zinc-900">
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
 
-                {/* Content */}
-                <div className="p-5 flex flex-col justify-between flex-1 text-left">
-                  <div>
-                    <div className="flex items-center gap-2 text-[10px] font-semibold text-zinc-400 dark:text-zinc-500 mb-2">
-                      <Clock size={11} />
-                      <span>{blog.date}</span>
+                  {/* Content */}
+                  <div className="p-5 flex flex-col justify-between flex-1 text-left">
+                    <div>
+                      <div className="flex items-center gap-2 text-[10px] font-semibold text-zinc-400 dark:text-zinc-500 mb-2">
+                        <Clock size={11} />
+                        <span>{blog.date}</span>
+                      </div>
+                      <h3 className={`font-heading font-bold text-xs sm:text-sm leading-snug line-clamp-3 group-hover:text-red-500 dark:group-hover:text-amber-400 transition-colors ${
+                        isDark ? "text-white" : "text-zinc-800"
+                      }`}>
+                        {blog.title}
+                      </h3>
                     </div>
-                    <h3 className={`font-heading font-bold text-xs sm:text-sm leading-snug line-clamp-3 group-hover:text-red-500 dark:group-hover:text-amber-400 transition-colors ${
-                      isDark ? "text-white" : "text-zinc-800"
-                    }`}>
-                      {blog.title}
-                    </h3>
-                  </div>
 
-                  <div className="mt-4 pt-3 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-xs font-bold text-red-655 dark:text-amber-500">
-                    <span>Leer Artículo</span>
-                    <ChevronRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                    <div className="mt-4 pt-3 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-xs font-bold text-red-655 dark:text-amber-500">
+                      <span>Leer Artículo</span>
+                      <ChevronRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Link>
             ))}
           </div>
         </div>
