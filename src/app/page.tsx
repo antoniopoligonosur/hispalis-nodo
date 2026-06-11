@@ -740,13 +740,13 @@ export default function Home() {
                 <div
                   key={item.id}
                   onMouseEnter={() => setActiveMerchId(item.id)}
-                  className={`flex flex-row items-center gap-4 p-4 rounded-xl border transition-all duration-300 ease-in-out hover:scale-[1.02] cursor-pointer ${
+                  className={`flex flex-row items-center justify-between gap-4 p-4 rounded-2xl border transition-all duration-300 ease-in-out hover:scale-[1.02] cursor-pointer ${
                     activeMerchId === item.id
                       ? isDark
                         ? "bg-[#18181c] border-zinc-700 shadow-md"
                         : "bg-zinc-50 border-zinc-300 shadow-md"
                       : isDark 
-                        ? "bg-[#111114]/50 border-zinc-900/60 hover:border-zinc-800" 
+                        ? "bg-white/5 border-zinc-900/60 hover:border-zinc-800" 
                         : "bg-white border-zinc-200 hover:border-zinc-300"
                   }`}
                 >
@@ -757,18 +757,23 @@ export default function Home() {
                     className="w-32 h-auto rounded-md shrink-0 object-cover border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-100 dark:bg-zinc-900 shadow-sm"
                   />
 
-                  <div className="flex-1 pr-2">
-                    <div className="flex items-center gap-3 mb-2 flex-wrap">
-                      <span className="px-2 py-0.5 bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-400 text-[10px] font-black uppercase tracking-widest rounded-md">
-                        {item.badge}
-                      </span>
-                      <h4 className={`font-heading font-bold text-sm sm:text-base ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.name}</h4>
-                    </div>
-                    <p className="text-xs text-zinc-400 dark:text-zinc-500 leading-relaxed">{item.description}</p>
+                  {/* BLOQUE DE TEXTO INTERMEDIO (Agrupación AntI-Rotura) */}
+                  <div className="flex flex-col gap-1 flex-1 min-w-0">
+                    <span className="w-fit px-2 py-0.5 bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-400 text-[10px] font-black uppercase tracking-widest rounded-md">
+                      {item.badge}
+                    </span>
+                    <h4 className={`font-heading font-bold text-sm sm:text-base ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                      {item.name}
+                    </h4>
+                    <p className="text-xs text-zinc-400 dark:text-zinc-500 leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
-                  <div className="flex items-center justify-end gap-4 shrink-0">
+
+                  {/* BLOQUE DE PRECIO Y ACCIÓN A LA DERECHA */}
+                  <div className="flex flex-row items-center gap-3 shrink-0">
                     <span className={`text-base sm:text-lg font-black font-heading ${
-                      isDark ? "text-white" : "text-zinc-900"
+                      isDark ? 'text-white' : 'text-zinc-900'
                     }`}>{item.price}</span>
                     
                     {/* CTA "¡Yo quiero!" (Alta visibilidad y contraste perfecto) */}
