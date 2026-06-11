@@ -740,7 +740,7 @@ export default function Home() {
                 <div
                   key={item.id}
                   onMouseEnter={() => setActiveMerchId(item.id)}
-                  className={`flex flex-col sm:flex-row sm:items-center gap-5 p-5 rounded-2xl border transition-all duration-300 ease-in-out hover:scale-[1.02] cursor-pointer ${
+                  className={`flex flex-row items-center gap-4 p-4 rounded-xl border transition-all duration-300 ease-in-out hover:scale-[1.02] cursor-pointer ${
                     activeMerchId === item.id
                       ? isDark
                         ? "bg-[#18181c] border-zinc-700 shadow-md"
@@ -751,14 +751,11 @@ export default function Home() {
                   }`}
                 >
                   {/* Thumbnail Image */}
-                  <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-100 dark:bg-zinc-900 shadow-sm">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-32 h-auto rounded-md shrink-0 object-cover border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-100 dark:bg-zinc-900 shadow-sm"
+                  />
 
                   <div className="flex-1 pr-2">
                     <div className="flex items-center gap-3 mb-2 flex-wrap">
@@ -769,7 +766,7 @@ export default function Home() {
                     </div>
                     <p className="text-xs text-zinc-400 dark:text-zinc-500 leading-relaxed">{item.description}</p>
                   </div>
-                  <div className="mt-4 sm:mt-0 flex items-center justify-between sm:justify-end gap-4 border-t sm:border-t-0 pt-4 sm:pt-0 border-zinc-100 dark:border-zinc-900 shrink-0">
+                  <div className="flex items-center justify-end gap-4 shrink-0">
                     <span className={`text-base sm:text-lg font-black font-heading ${
                       isDark ? "text-white" : "text-zinc-900"
                     }`}>{item.price}</span>
