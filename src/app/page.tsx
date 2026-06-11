@@ -765,7 +765,7 @@ export default function Home() {
                       <span className="px-2 py-0.5 bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-400 text-[10px] font-black uppercase tracking-widest rounded-md">
                         {item.badge}
                       </span>
-                      <h4 className="font-heading font-bold text-zinc-850 dark:text-white text-sm sm:text-base">{item.name}</h4>
+                      <h4 className={`font-heading font-bold text-sm sm:text-base ${isDark ? 'text-white' : 'text-zinc-900'}`}>{item.name}</h4>
                     </div>
                     <p className="text-xs text-zinc-400 dark:text-zinc-500 leading-relaxed">{item.description}</p>
                   </div>
